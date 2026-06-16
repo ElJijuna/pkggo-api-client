@@ -1,0 +1,39 @@
+# source
+src/
+types/
+
+# tests
+tests/
+coverage/
+*.test.ts
+*.spec.ts
+
+# test utilities
+test-client/
+
+# config files
+biome.json
+eslint.config.js
+jest.config.ts
+tsconfig.json
+tsconfig.docs.json
+tsconfig.test.json
+tsup.config.ts
+typedoc.json
+.releaserc.json
+
+# CI/CD
+.github/
+
+# generated docs
+docs/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# environment variables
+.env
+.env.*
+
+# macOS
+.DS_Store

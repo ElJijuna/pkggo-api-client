@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "extends": "./node_modules/super-configs/typedoc.json",
+  "entryPoints": ["src/index.ts"],
+  "tsconfig": "tsconfig.docs.json",
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/test/**"],
+  "out": "docs",
+  "name": "Go Package API Client",
+  "readme": "none",
+  "navigationLinks": {
+    "GitHub": "https://github.com/ElJijuna/pkggo-api-client",
+    "npm": "https://www.npmjs.com/package/pkggo-api-client"
+  }
+}

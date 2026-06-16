@@ -7,12 +7,13 @@
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
+    "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "lib": ["ES2022", "DOM"],
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "*.config.ts"],
+  "include": ["src/**/*.ts", "*.config.ts", "types/**/*.d.ts"],
   "exclude": ["dist", "node_modules"]
 }
