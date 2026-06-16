@@ -111,4 +111,45 @@ describe('PkgGoClient', () => {
       'https://pkg.go.dev/github.com/pkg/errors@v1.0.0',
     );
   });
+
+  it('emits request events on successful requests', async () => {
+    const onRequest = jest.fn();
+    mockJson({ Version: 'v1.2.3', Time: '2024-01-02T03:04:05Z' });
+
+    pkggo.on('request', onRequest);
+    await pkggo.module('github.com/pkg/errors').latest();
+
+    expect(onRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://proxy.golang.org/github.com/pkg/errors/@latest',
+        method: 'GET',
+        statusCode: 200,
+      }),
+    );
+    expect(onRequest.mock.calls[0][0].startedAt).toBeInstanceOf(Date);
+    expect(onRequest.mock.calls[0][0].finishedAt).toBeInstanceOf(Date);
+    expect(typeof onRequest.mock.calls[0][0].durationMs).toBe('number');
+  });
+
+  it('emits request events on failed requests', async () => {
+    const onRequest = jest.fn();
+    mockFetch.mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+      json: jest.fn(),
+    });
+
+    pkggo.on('request', onRequest);
+    await expect(pkggo.module('example.com/missing').latest()).rejects.toThrow(PkgGoApiError);
+
+    expect(onRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://proxy.golang.org/example.com/missing/@latest',
+        method: 'GET',
+        statusCode: 404,
+        error: expect.any(PkgGoApiError),
+      }),
+    );
+  });
 });
