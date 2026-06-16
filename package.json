@@ -1,6 +1,6 @@
 {
   "name": "pkggo-api-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "TypeScript client for Go module proxy and pkg.go.dev URLs",
   "homepage": "https://github.com/ElJijuna/pkggo-api-client#readme",
   "bugs": {
