@@ -1,7 +1,6 @@
 import baseConfig from 'super-configs/jest';
-import type { Config } from 'jest';
 
-const config: Config = {
+export default {
   ...baseConfig,
   testMatch: ['**/*.test.ts'],
   collectCoverageFrom: ['src/**/*.ts'],
@@ -9,5 +8,3 @@ const config: Config = {
     '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
 };
-
-export default config;

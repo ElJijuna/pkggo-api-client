@@ -14,7 +14,7 @@ test-client/
 # config files
 biome.json
 eslint.config.js
-jest.config.ts
+jest.config.js
 tsconfig.json
 tsconfig.docs.json
 tsconfig.test.json
