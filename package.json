@@ -1,0 +1,59 @@
+{
+  "name": "pkggo-api-client",
+  "version": "0.0.1",
+  "description": "TypeScript client for Go module proxy and pkg.go.dev URLs",
+  "homepage": "https://github.com/ElJijuna/pkggo-api-client#readme",
+  "bugs": {
+    "url": "https://github.com/ElJijuna/pkggo-api-client/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElJijuna/pkggo-api-client.git"
+  },
+  "license": "MIT",
+  "author": "pilmee <pilmee@gmail.com> (https://github.com/ElJijuna)",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "check": "npm run lint && npm test && npm run build",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "tsc -p tsconfig.test.json --noEmit",
+    "lint:fix": "tsc -p tsconfig.test.json --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "go",
+    "golang",
+    "pkg.go.dev",
+    "module-proxy",
+    "api-client",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.4.2",
+    "super-configs": "^1.14.0",
+    "ts-jest": "^29.4.1",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.0"
+  }
+}
