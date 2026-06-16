@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ElJijuna/pkggo-api-client/compare/v1.0.0...v1.1.0) (2026-06-16)
+
+
+### Features
+
+* update Node.js version in release workflow to 22 ([6aa2441](https://github.com/ElJijuna/pkggo-api-client/commit/6aa244137f5da2d090234d97d1a12736abbf5e31))
+
 # 1.0.0 (2026-06-16)
 
 
